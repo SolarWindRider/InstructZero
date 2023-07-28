@@ -8,7 +8,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from automatic_prompt_engineer import evaluate, config, template, data
 import os
 import re
-from misc import get_test_conf, get_conf
+from experiments.misc import get_test_conf, get_conf
 
 from torch.quasirandom import SobolEngine
 from botorch.models import SingleTaskGP
@@ -17,11 +17,11 @@ from botorch import fit_gpytorch_model
 from botorch.acquisition.analytic import ExpectedImprovement
 from gpytorch.kernels import ScaleKernel, MaternKernel
 from gpytorch.priors import GammaPrior
-from instruction_coupled_kernel import *
+from experiments.instruction_coupled_kernel import *
 import time
 
-from misc import set_all_seed, TASKS, tkwargs, N_INIT, BATCH_SIZE, N_ITERATIONS
-from args import parse_args
+from experiments.misc import set_all_seed, TASKS, tkwargs, N_INIT, BATCH_SIZE, N_ITERATIONS
+from experiments.args import parse_args
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
